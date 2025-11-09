@@ -41,7 +41,7 @@ function createEmployee(salary: number | string) {
   return new Director();
 }
 
-function isDirector(employee: Director | Teacher): employee is Director {
+export function isDirector(employee: Director | Teacher): employee is Director {
   return employee instanceof Director;
 }
 
