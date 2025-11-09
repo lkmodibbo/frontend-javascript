@@ -51,3 +51,32 @@ if (output) {
         output.appendChild(pre);
 
 }
+
+interface StudentClassConstructor {
+    new (firstName: string, lastName: string): StudentClassInterface;
+}
+
+interface StudentClassInterface {
+    workOnHomework(): string;
+    displayName(): string;
+}
+
+class StudentClass implements StudentClassInterface {
+    firstName: string;
+    lastName: string;
+
+    constructor(firstName: string, lastName: string) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+    workOnHomework(): string {
+        return "currently working"
+    }
+    displayName(): string {
+        return this.firstName
+    }
+}
+
+const student = new StudentClass("Lukman", "Modibbo");
+console.log(student.displayName());
+console.log(student.workOnHomework())
